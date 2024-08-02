@@ -1,6 +1,8 @@
 # weread
 
 > 自定义微信读书网页版的字体
+> ![预览1](https://raw.githubusercontent.com/ningbnii/chrome_ext_weread/master/preview1.png)
+> ![预览2](https://raw.githubusercontent.com/ningbnii/chrome_ext_weread/master/preview2.png)
 
 ## Installing
 
