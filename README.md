@@ -1,6 +1,6 @@
 # weread
 
-> a chrome extension tools built with Vite + Vue, and Manifest v3
+> 自定义微信读书网页版的字体
 
 ## Installing
 
