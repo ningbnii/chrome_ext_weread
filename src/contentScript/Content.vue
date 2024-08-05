@@ -41,7 +41,6 @@ function applyFontToPage(fontId) {
 function triggerCanvasRedraw() {
   // isNormalReader，是否有这个class的button，下面的span
   const isNormalReader = document.querySelector('.isNormalReader')
-
   if (isNormalReader) {
     // 模拟触发键盘事件，触发页面重绘，按下方向键前进，然后等300ms后触发后退，触发页面重绘
     const backEvent = new KeyboardEvent('keydown', {
