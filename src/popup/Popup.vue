@@ -50,15 +50,24 @@ function toggleCustomFont() {
 }
 
 function applyFontToCurrentTab(fontId) {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    const currentTab = tabs[0]
-    if (currentTab) {
-      chrome.tabs.sendMessage(currentTab.id, {
-        action: 'changeFont',
-        fontId: fontId,
+  chrome.runtime.sendMessage(
+    {
+      type: 'sessionStorageSave',
+      key: 'weread_font_initialized',
+      value: false,
+    },
+    () => {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        const currentTab = tabs[0]
+        if (currentTab) {
+          chrome.tabs.sendMessage(currentTab.id, {
+            action: 'changeFont',
+            fontId: fontId,
+          })
+        }
       })
-    }
-  })
+    },
+  )
 }
 </script>
 

@@ -20,14 +20,15 @@ export default defineManifest({
   },
   // options_page: 'options.html',
   // devtools_page: 'devtools.html',
-  // background: {
-  //   service_worker: 'src/background/index.js',
-  //   type: 'module',
-  // },
+  background: {
+    service_worker: 'src/background/index.js',
+    type: 'module',
+  },
   content_scripts: [
     {
       matches: ['https://weread.qq.com/*/**'],
       js: ['src/contentScript/index.js'],
+      run_at: 'document_idle', // 'document_start'
     },
   ],
   // side_panel: {
@@ -39,7 +40,7 @@ export default defineManifest({
       matches: [],
     },
   ],
-  permissions: ['sidePanel', 'storage', 'fontSettings'],
+  permissions: ['sidePanel', 'storage', 'fontSettings', 'activeTab', 'scripting'],
   // chrome_url_overrides: {
   //   newtab: 'newtab.html',
   // },
